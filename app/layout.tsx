@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("bg-background antialiased", urbanist.variable)}>
+        <body className={cn("bg-background antialiased mt-8", urbanist.variable)}>
           <img
             src="/img/hero.svg"
             className="absolute -z-10 top-0 right-0 w-full md:w-[60%]"
