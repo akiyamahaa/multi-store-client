@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/header";
 import { auth } from "@clerk/nextjs/server";
 import Footer from "@/components/footer";
+import ToastProvider from "@/providers/toast-provider";
 
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 
@@ -24,14 +25,15 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("bg-background antialiased mt-8", urbanist.variable)}>
+        <body className={cn("bg-background antialiased", urbanist.variable)}>
+          <ToastProvider />
           <img
             src="/img/hero.svg"
             className="absolute -z-10 top-0 right-0 w-full md:w-[60%]"
             alt=""
           />
           <Header userId={userId} />
-          {children}
+          <div className="mt-20">{children}</div>
           <Footer />
         </body>
       </html>

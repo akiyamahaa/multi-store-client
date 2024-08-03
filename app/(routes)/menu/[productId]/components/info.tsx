@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import useCart from "@/hooks/use-carts";
 import { cn } from "@/lib/utils";
 import { Products } from "@/types-db";
 import {
@@ -18,9 +19,16 @@ interface InfoProps {
 
 export default function Info({ product }: InfoProps) {
   const [qty, setQty] = useState(1);
+  const cart = useCart();
   const handleQty = (num: number) => {
     setQty(num);
+    cart.updateItemQuantity(product.id, num);
   };
+
+  const addToCart = (data: Products) => {
+    cart.addItem({ ...data, qty: qty });
+  };
+
   return (
     <div>
       <h1 className="text-3xl font-bold text-neutral-800">{product.name}</h1>
@@ -85,7 +93,10 @@ export default function Info({ product }: InfoProps) {
           </div>
         </div>
       </div>
-      <Button className="w-full py-6 text-xl font-semibold hover:bg-hero hover:text-white flex items-center justify-center gap-3 ">
+      <Button
+        onClick={() => addToCart(product)}
+        className="w-full py-6 text-xl font-semibold hover:bg-hero hover:text-white flex items-center justify-center gap-3 "
+      >
         Add to cart <ShoppingCart className="w-4 h-4" />
       </Button>
     </div>

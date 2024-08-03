@@ -7,6 +7,7 @@ import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import MainNav from "./main-nav";
 import { useEffect, useState } from "react";
+import CartActionButton from "./cart-action";
 
 interface HeaderProps {
   userId: string | null;
@@ -18,7 +19,7 @@ export default function Header({ userId }: HeaderProps) {
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 0;
-      setScrolled(true);
+      setScrolled(isScrolled);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.addEventListener("scroll", handleScroll);
@@ -28,7 +29,9 @@ export default function Header({ userId }: HeaderProps) {
     <header
       className={cn(
         "w-full z-50 transition",
-        scrolled ? "fixed top-0 left-0 bg-white shadow-lg" : "bg-transparent"
+        scrolled
+          ? "fixed top-0 left-0 right-0 bg-white shadow-lg"
+          : "bg-transparent"
       )}
     >
       <Container>
@@ -45,7 +48,7 @@ export default function Header({ userId }: HeaderProps) {
 
           {userId ? (
             <div className="ml-4 flex items-center space-x-4">
-              <UserButton afterSignOutUrl="/" />
+              <UserButton />
             </div>
           ) : (
             <div className="flex items-center space-x-2 ml-4">
@@ -59,6 +62,7 @@ export default function Header({ userId }: HeaderProps) {
               </Link>
             </div>
           )}
+          {userId && <CartActionButton />}
         </div>
       </Container>
     </header>
