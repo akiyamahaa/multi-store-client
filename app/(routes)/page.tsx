@@ -3,6 +3,7 @@ import Container from "@/components/container";
 import PopularContent from "@/components/popular-content";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Products } from "@/types-db";
 import { FileHeart, Salad, Truck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,14 @@ import Link from "next/link";
 export const revalidate = 0;
 
 export default async function HomePage() {
-  const products = await getProducts({ isFeatured: true });
+  let products: Products[] = [];
+  try {
+    products = await getProducts({ isFeatured: true });
+    console.log("🚀 ~ HomePage ~ products:", products);
+  } catch (err: any) {
+    console.log(err.message);
+  }
+  
   return (
     <>
       <Container className="px-4 md:px-12">
@@ -106,7 +114,6 @@ export default async function HomePage() {
         </section>
 
         {/* Our chef sections */}
-        
       </Container>
     </>
   );

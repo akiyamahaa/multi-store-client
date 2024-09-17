@@ -41,22 +41,16 @@ export default function Info({ product }: InfoProps) {
         </p>
       </div>
       <div className="w-full flex items-center justify-start gap-2 flex-wrap px-2 mt-8">
-        {product.cuisine && (
-          <div className="rounded-md bg-emerald-500/10 px-3 py-2 textb-ase font-semibold capitalize flex items-center gap-2">
-            <CookingPot className="h-5 w-5" />
-            {product.cuisine}
-          </div>
-        )}
         {product.category && (
           <div className="rounded-md bg-emerald-500/10 px-3 py-2 textb-ase font-semibold capitalize flex items-center gap-2">
             <Soup className="h-5 w-5" />
             {product.category}
           </div>
         )}
-        {product.kitchen && (
+        {product.origin && (
           <div className="rounded-md bg-emerald-500/10 px-3 py-2 textb-ase font-semibold capitalize flex items-center gap-2">
             <Utensils className="h-5 w-5" />
-            {product.kitchen}
+            {product.origin}
           </div>
         )}
         {product.size && (

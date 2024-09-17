@@ -6,9 +6,8 @@ const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`;
 interface Query {
   size?: string;
   isFeatured?: boolean;
-  cuisine?: string;
+  origin?: string;
   category?: string;
-  kitchen?: string;
 }
 
 const getProducts = async (query: Query): Promise<Products[]> => {
@@ -17,9 +16,8 @@ const getProducts = async (query: Query): Promise<Products[]> => {
     query: {
       size: query.size,
       isFeatured: query.isFeatured,
-      cuisine: query.cuisine,
+      origin: query.origin,
       category: query.category,
-      kitchen: query.kitchen,
     },
   });
   const res = await fetch(url);

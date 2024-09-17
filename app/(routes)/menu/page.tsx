@@ -5,12 +5,10 @@ import FilterContainer from "@/components/filter-container";
 import CategoryFilters from "./components/category-filter";
 import getSizes from "@/actions/get-sizes";
 import SizeFilters from "./components/size-filter";
-import getKitchens from "@/actions/get-kitchens";
-import KitchenFilters from "./components/kitchen-filter";
-import getCuisines from "@/actions/get-cuisines";
-import CuisineFilters from "./components/cuisine-filter";
 import getProducts from "@/actions/get-products";
 import PageContent from "./components/page-content";
+import getOrigins from "@/actions/get-origins";
+import OriginFilter from "./components/origin-filter";
 
 export const revalidate = 0;
 
@@ -18,23 +16,20 @@ interface MenuProps {
   searchParams: {
     size?: string;
     isFeatured?: boolean;
-    cuisine?: string;
+    origin?: string;
     category?: string;
-    kitchen?: string;
   };
 }
 
 export default async function MenuPage({ searchParams }: MenuProps) {
   const categories = await getCategories();
   const sizes = await getSizes();
-  const kitchens = await getKitchens();
-  const cuisines = await getCuisines();
+  const origins = await getOrigins();
   const products = await getProducts({
     size: searchParams.size,
     isFeatured: searchParams.isFeatured,
     category: searchParams.category,
-    cuisine: searchParams.cuisine,
-    kitchen: searchParams.kitchen,
+    origin: searchParams.origin,
   });
 
   return (
@@ -44,12 +39,11 @@ export default async function MenuPage({ searchParams }: MenuProps) {
           <FilterContainer>
             <CategoryFilters categories={categories} />
             <SizeFilters sizes={sizes} />
-            <KitchenFilters kitchens={kitchens} />
-            <CuisineFilters cuisines={cuisines} />
+            <OriginFilter origins={origins} />
           </FilterContainer>
         </div>
         <Box className="col-span-12 md:col-span-10 flex-col items-start justify-start w-full">
-          <PageContent products={products}/>
+          <PageContent products={products} />
         </Box>
       </div>
     </Container>

@@ -7,8 +7,10 @@ export interface Products {
   isArchived: boolean;
   category: string;
   size: string;
-  kitchen: string;
-  cuisine: string;
+  origin: string;
+  description: string;
+  // kitchen: string;
+  // cuisine: string;
   qty: number;
 }
 
@@ -45,4 +47,10 @@ export interface Orders {
   address: string;
   order_status: string;
   userId: string;
+}
+
+export interface Origin {
+  id: string;
+  name: string;
+  value: string;
 }

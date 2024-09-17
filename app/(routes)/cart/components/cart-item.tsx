@@ -36,19 +36,19 @@ export default function CartItem({ item }: CartItemProps) {
           {item.name}
         </h2>
         <div className="w-full flex items-center justify-start gap-2 flex-wrap mt-4">
-          {item.cuisine && (
+          {/* {item.cuisine && (
             <div className="rounded-md bg-emerald-500/10 px-2 py-1 text-[11px] font-semibold capitalize">
               {item.cuisine}
             </div>
-          )}
+          )} */}
           {item.category && (
             <div className="rounded-md bg-emerald-500/10 px-2 py-1 text-[11px] font-semibold capitalize">
               {item.category}
             </div>
           )}
-          {item.kitchen && (
+          {item.origin && (
             <div className="rounded-md bg-emerald-500/10 px-2 py-1 text-[11px] font-semibold capitalize">
-              {item.kitchen}
+              {item.origin}
             </div>
           )}
           {item.size && (
