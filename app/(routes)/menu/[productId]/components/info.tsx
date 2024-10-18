@@ -31,13 +31,12 @@ export default function Info({ product }: InfoProps) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-neutral-800">{product.name}</h1>
+      <h1 className="text-3xl font-bold text-neutral-800 capitalize">
+        {product.name}
+      </h1>
       <div className="mt-3 flex items-end justify-between">
         <p className="text-base text-left text-neutral-600">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum
-          voluptas cumque eligendi quo fuga porro suscipit sunt, quis veritatis,
-          perspiciatis debitis architecto tenetur quidem iusto provident?
-          Voluptas quia doloribus ab.
+          {product.description}
         </p>
       </div>
       <div className="w-full flex items-center justify-start gap-2 flex-wrap px-2 mt-8">
@@ -67,7 +66,7 @@ export default function Info({ product }: InfoProps) {
         </div>
         <div className="col-span-3 space-y-8">
           <p className="text-xl font-semibold text-neutral-700">
-            ${product.price}
+            ${product.price.toFixed(2)}
           </p>
           <div className="flex items-center gap-2">
             {[1, 2, 3, 4, 5].map((num) => (

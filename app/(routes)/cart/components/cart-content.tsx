@@ -74,7 +74,7 @@ export default function CartContent({ userId }: CartContentProps) {
               <div className="flex items-center justify-between w-full px-4 whitespace-nowrap text-muted-foreground">
                 <p className="text-black font-bold text-base">Total</p>
                 <p className="text-2xl font-semibold text-black">
-                  $ {totalPrice}
+                  $ {totalPrice.toFixed(2)}
                 </p>
               </div>
             </Box>

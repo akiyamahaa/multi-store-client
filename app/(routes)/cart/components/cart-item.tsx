@@ -77,7 +77,7 @@ export default function CartItem({ item }: CartItemProps) {
         </div>
       </Box>
       <Box className="flex items-center justify-center h-full">
-        <h2>${item.price * item.qty}</h2>
+        <h2>${(item.price * item.qty).toFixed(2)}</h2>
       </Box>
 
       <Button

@@ -12,8 +12,8 @@ interface OrderItemProps {
 export default function OrderItem({ order }: OrderItemProps) {
   return (
     <Box>
-      <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-6 px-4 rounded-md border border-gray-100">
-        <div className=" flex items-center gap-2">
+      <div className="w-full flex flex-row items-center justify-between gap-x-4 gap-y-6 px-4 rounded-md border border-gray-100">
+        <div className="flex items-center gap-2">
           {order.orderItems.map((item) => (
             <div
               key={item.id}
