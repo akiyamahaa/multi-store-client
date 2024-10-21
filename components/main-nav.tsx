@@ -32,16 +32,16 @@ export default function MainNav({
       label: "Orders",
       active: pathname === "/orders",
     },
-    {
-      href: "/about",
-      label: "About",
-      active: pathname === "/about",
-    },
-    {
-      href: "/contact",
-      label: "Contact",
-      active: pathname === "/contact",
-    },
+    // {
+    //   href: "/about",
+    //   label: "About",
+    //   active: pathname === "/about",
+    // },
+    // {
+    //   href: "/contact",
+    //   label: "Contact",
+    //   active: pathname === "/contact",
+    // },
   ];
   return (
     <div className="ml-auto">
