@@ -12,7 +12,7 @@ import ToastProvider from "@/providers/toast-provider";
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 
 export const metadata: Metadata = {
-  title: "Foodied",
+  title: "TiniMart",
   description: "Have food & share love",
 };
 
@@ -33,7 +33,14 @@ export default function RootLayout({
             alt=""
           />
           <Header userId={userId} />
-          <div className="mt-20">{children}</div>
+          <div
+            className="mt-20"
+            style={{
+              minHeight: "calc(100vh - 224px)",
+            }}
+          >
+            {children}
+          </div>
           <Footer />
         </body>
       </html>
