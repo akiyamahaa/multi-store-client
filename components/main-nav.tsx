@@ -56,14 +56,8 @@ export default function MainNav({
             href={route.href}
             key={route.href}
             className={cn(
-              "text-base font-medium transition-colors hover:text-primary",
-              route.active
-                ? `${
-                    scrolled
-                      ? "text-hero font-bold"
-                      : "text-black dark:text-white"
-                  }`
-                : `${scrolled ? "text-black" : "text-white"}`
+              "text-base transition-colors hover:text-primary font-semibold",
+              route.active ? "text-hero" : "text-black"
             )}
           >
             {route.label}

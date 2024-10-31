@@ -27,11 +27,11 @@ export default function RootLayout({
       <html lang="en">
         <body className={cn("bg-background antialiased", urbanist.variable)}>
           <ToastProvider />
-          <img
+          {/* <img
             src="/img/hero.svg"
-            className="absolute -z-10 top-0 right-0 w-full md:w-[60%]"
+            className="absolute -z-10 top-0 right-0 w-full md:w-[70%]"
             alt=""
-          />
+          /> */}
           <Header userId={userId} />
           <div
             className="mt-20"

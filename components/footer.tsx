@@ -10,9 +10,8 @@ export default function Footer() {
             <h2 className="text-3xl font-semibold">Menu</h2>
             <p className="text-neutral-500 text-sm">Home</p>
             <p className="text-neutral-500 text-sm">Why Choose</p>
-            <p className="text-neutral-500 text-sm">Special Menu</p>
+            <p className="text-neutral-500 text-sm">Special Category</p>
             <p className="text-neutral-500 text-sm">Regular Food</p>
-            <p className="text-neutral-500 text-sm">Special Chefs</p>
           </div>
 
           <div className="flex flex-col items-start justify-start gap-3">
@@ -25,8 +24,8 @@ export default function Footer() {
           <div className="flex flex-col items-start justify-start gap-3">
             <h2 className="text-3xl font-semibold">Contact</h2>
             <p className="text-neutral-500 text-sm">+000 0000 0000</p>
-            <p className="text-neutral-500 text-sm">info@foodied.com</p>
-            <p className="text-neutral-500 text-sm">1234 New Street, India</p>
+            <p className="text-neutral-500 text-sm">vosyquocuy@gmail.com</p>
+            <p className="text-neutral-500 text-sm">9 Vu Pham Ham, Ha Noi</p>
           </div>
 
           <div className="flex flex-col items-start justify-start gap-3">
@@ -45,7 +44,7 @@ export default function Footer() {
         </div>
         <div className="mx-auto py-8 ">
           <p className="text-center text-xs text-black">
-            &copy; 2023 Foodied, Inc. All rights reserved
+            &copy; 2024 TInimart, Inc. All rights reserved
           </p>
         </div>
       </Container>

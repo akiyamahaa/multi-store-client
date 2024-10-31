@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 import MainNav from "./main-nav";
 import { useEffect, useState } from "react";
 import CartActionButton from "./cart-action";
+import Image from "next/image";
+import images from "@/constants/images";
 
 interface HeaderProps {
   userId: string | null;
@@ -35,12 +37,12 @@ export default function Header({ userId }: HeaderProps) {
       )}
     >
       <Container>
-        <div className="relative px-4 sm:px-6 lg:px-12 flex h-16 items-center">
+        <div className="relative px-4 sm:px-6 lg:px-12 flex py-4 items-center shadow-sm">
           <Link
             href={"/"}
             className="uppercase flex gap-x-2 font-bold text-neutral-700 text-lg md:text-xl"
           >
-            Foodied
+            <Image src={images.logo} alt="logo" className="h-16 w-full" />
           </Link>
           {/* Main navbar */}
 
@@ -53,10 +55,15 @@ export default function Header({ userId }: HeaderProps) {
           ) : (
             <div className="flex items-center space-x-2 ml-4">
               <Link href={"/sign-in"}>
-                <Button variant={"outline"}>Login</Button>
+                <Button
+                  variant={"outline"}
+                  className="text-hero border border-hero"
+                >
+                  Login
+                </Button>
               </Link>
               <Link href={"/sign-up"}>
-                <Button className="bg-green-400 text-black hover:bg-green-500">
+                <Button className="bg-hero text-white hover:bg-green-500">
                   Sign up
                 </Button>
               </Link>
